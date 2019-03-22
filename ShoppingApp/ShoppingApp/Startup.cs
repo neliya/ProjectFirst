@@ -25,7 +25,12 @@ namespace ShoppingApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+            }
             app.UseStaticFiles();
+            app.UseNodeModules(env);
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",

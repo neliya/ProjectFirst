@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,30 @@ namespace ShoppingApp.Controllers
             return View();
         }
 
-        [HttpGet("")]
+        [HttpGet("contact")]
         public IActionResult Contact()
         {
-            ViewBag.Title = "Contact Us";
+            return View();
+        }
+        
+
+        [HttpPost("contact")]
+        public IActionResult Contact(ContactViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            else
+            {
+
+            }
             return View();
         }
 
         public IActionResult About()
         {
-            ViewBag.Title = "Abbout Information";
+            ViewBag.Title = "About Information";
             return View();
         }
     }

@@ -13,7 +13,18 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#line 1 "C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\Views\_ViewImports.cshtml"
+using ShoppingApp.Controllers;
+
+#line default
+#line hidden
+#line 2 "C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\Views\_ViewImports.cshtml"
+using ShoppingApp.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f2e63f02868c60badbfde4926e5b3bc91bba8b10", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
