@@ -1,0 +1,14 @@
+﻿{
+  "Colors": {
+    "Favourite": "blue"
+  },
+  "ConnectionStrings": {
+    "ShoppingAppConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=ShopAppDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  }
+}
