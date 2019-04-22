@@ -27,7 +27,6 @@ namespace ShoppingApp.Data
         public async Task SeedAsync()
         {
             _context.Database.EnsureCreated();
-            _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT Order ON");
             StoreUser user = await _userManager.FindByEmailAsync("neliyagrg@gmail.com");
             if(user == null)
             {
@@ -57,8 +56,9 @@ namespace ShoppingApp.Data
 
                 var order = _context.Orders.Where(o => o.Id == 1).FirstOrDefault();
 
-                if(order != null)
+                if(order == null)
                 {
+                    order = new Order();
                     order.User = user;
                     order.Items = new List<OrderItem>()
                     {
@@ -74,7 +74,6 @@ namespace ShoppingApp.Data
 
                 _context.SaveChanges();
             }
-            _context.Database.ExecuteSqlCommand("SET IDENTITY_INSERT Order OFF");
 
         }
 

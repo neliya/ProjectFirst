@@ -14,6 +14,8 @@ using ShoppingApp.Data;
 using ShoppingApp.Data.Entities;
 using ShoppingApp.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace ShoppingApp
 {
@@ -35,6 +37,20 @@ namespace ShoppingApp
 
             })
             .AddEntityFrameworkStores<ShoppingAppContext>();
+
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidIssuer = _config["Tokens:Issuer"],
+                        ValidAudience = _config["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]))
+                    };                   
+
+                });
+
 
             services.AddDbContext<ShoppingAppContext>(cfg =>
             {
@@ -77,7 +93,7 @@ namespace ShoppingApp
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
-                    seeder.SeedAsync();
+                    seeder.SeedAsync().Wait();
                 }
             }
 

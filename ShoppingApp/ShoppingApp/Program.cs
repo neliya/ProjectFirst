@@ -27,7 +27,7 @@ namespace ShoppingApp
             using (var scope = scopeFactory.CreateScope())
             {
                 var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
-                seeder.SeedAsync();
+                seeder.SeedAsync().Wait();
             }
                
         }

@@ -9,13 +9,11 @@ namespace ShoppingApp.Data.Entities
 {
   public class Order
   {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int Id { get; set; }
+    public int Id { get; set; }
     public DateTime OrderDate { get; set; }
     public string OrderNumber { get; set; }
     public ICollection<OrderItem> Items { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public StoreUser User { get; set; }
+    public StoreUser User { get; set; }
   }
 }

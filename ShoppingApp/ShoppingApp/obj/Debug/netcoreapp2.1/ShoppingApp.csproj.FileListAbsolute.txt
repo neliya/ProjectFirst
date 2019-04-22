@@ -3,7 +3,6 @@ C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp2.1\ShoppingApp.runtimeconfig.dev.json
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp2.1\ShoppingApp.dll
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp2.1\ShoppingApp.pdb
-C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.csprojAssemblyReference.cache
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.csproj.CoreCompileInputs.cache
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.RazorAssemblyInfo.cache
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.RazorAssemblyInfo.cs
@@ -28,7 +27,6 @@ C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\Pages\Error.g.cshtml.cs
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\Pages\_ViewStart.g.cshtml.cs
-C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\App\Product.g.cshtml.cs
 C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp2.1\ShoppingApp.deps.json
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\bin\Debug\netcoreapp2.1\ShoppingApp.runtimeconfig.json
@@ -63,3 +61,6 @@ C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\App\Shop.g.cshtml.cs
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.csprojAssemblyReference.cache
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.g.cshtml.cs
+C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\App\Shop.g.cshtml.cs
+C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.csprojAssemblyReference.cache
