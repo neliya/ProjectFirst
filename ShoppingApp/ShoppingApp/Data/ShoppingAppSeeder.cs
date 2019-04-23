@@ -56,7 +56,7 @@ namespace ShoppingApp.Data
 
                 var order = _context.Orders.Where(o => o.Id == 1).FirstOrDefault();
 
-                if(order == null)
+                if(order != null)
                 {
                     order = new Order();
                     order.User = user;

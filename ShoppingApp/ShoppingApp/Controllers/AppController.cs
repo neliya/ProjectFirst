@@ -24,7 +24,10 @@ namespace ShoppingApp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+
+            var products = _repository.GetProducts();
+
+            return View(products);
         }
 
         [HttpGet("contact")]
@@ -57,7 +60,6 @@ namespace ShoppingApp.Controllers
             return View();
         }
 
-        [Authorize]
         public IActionResult Shop()
         {
                          
