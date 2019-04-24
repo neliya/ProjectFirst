@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Product } from "./product";
 import { Order, OrderItem } from "./order";
-import { map } from 'rxjs/operators';
+import { map, filter, switchMap } from 'rxjs/operators';
 
 
 @Injectable()
@@ -26,19 +26,39 @@ export class DataService {
         return true;
     }
 
+
+    //loadProducts(): Observable<boolean> {
+    //    return this.http.get("api/products")
+    //        .pipe(map((data: any[]) => {
+    //            this.products = data;
+    //            return true;
+    //        }));
+    //}
+
+   
+
     public get loginRequired(): boolean {
         return this.token.length == 0 || this.tokenExpiration > new Date();
     }
 
-    login = async (creds: any): Promise<boolean> => {
-        var response = await this.http.post("/account/createtoken", creds).toPromise();
-
-        if (response != null) {
-            this.token = response['token'];
-            this.tokenExpiration = response['expiration'];
-        }
-        return true;
+    login(creds): Observable<boolean> {
+        return this.http.post("/account/createtoken", creds)
+            .pipe(map((data: any) => {
+                this.token = data.token;
+                this.tokenExpiration = data.expiration;
+                return true;
+            }));           
     }
+
+    //    login = async (creds: any): Promise<boolean> => {
+    //    var response = await this.http.post("/account/createtoken", creds).toPromise();
+
+    //    if (response != null) {
+    //        this.token = response['token'];
+    //        this.tokenExpiration = response['expiration'];
+    //    }
+    //    return true;
+    //}
 
     public AddToOrder(newProduct: Product) {
         let item: OrderItem = this.order.items.find(i => i.productId == newProduct.id);
@@ -56,5 +76,13 @@ export class DataService {
             this.order.items.push(item);
         }
 
+    }
+
+    public checkout() {
+        return this.http.post("api/orders", this.order)
+            .pipe(map(resposne => {
+                this.order = new Order();
+                return true;
+            }));
     }
 }

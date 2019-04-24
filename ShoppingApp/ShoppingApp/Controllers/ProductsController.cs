@@ -11,9 +11,9 @@ namespace ShoppingApp.Controllers
 {
     
 
-    [Route("api/[Controller]")]
-    [ApiController]
-    [Produces("application/json")]
+   
+  
+  
     public class ProductsController : Controller
     {
         private readonly IShoppingAppRepository _repository;
@@ -26,8 +26,7 @@ namespace ShoppingApp.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
+        [Route("api/products")]
         public ActionResult<IEnumerable<Product>> Get()
         {
             try

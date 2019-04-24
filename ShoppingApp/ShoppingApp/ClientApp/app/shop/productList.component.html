@@ -1,15 +1,10 @@
 ﻿<div class="row">
-    <div class="product-info col-md-4" *ngFor="let p of products">
-        <div class="card bg-light p-1 m-1">
-            <img src="/img/{{p.id}}.jpg" class="img-fluid" [alt]="p.title" />
-            <div class="product-name">{{ p.category}} - {{p.size}}</div>
-            <ul class="product-props">
-                <li><strong>Price</strong>:  {{p.price | currency:"USD":true}}</li>
-                <li><strong>Title</strong>: {{p.title}}</li>
-                <li><strong>Description</strong>: {{p.description}}</li>
-            </ul>
-            <button id="buyButton" class="btn btn-success" (click)="addProduct(p)">Buy</button>
-        </div>
-        
+    <div class="card_one col-md-3 " *ngFor="let p of products" style="padding: 0px;margin: 9px;margin-bottom:50px;">
+        <img src="/img/{{p.id}}.jpg" alt="Denim Jeans" style="width:100%; height: 294px;">
+        <h6> {{p.title}}</h6>
+        <p class="price"> {{p.price | currency:"USD":true}}</p>
+        <p>{{p.description}}</p>
+        <p> <button id="buyButton" class="btn btn-primary" (click)="addProduct(p)">Buy</button></p>
     </div>
 </div>
+

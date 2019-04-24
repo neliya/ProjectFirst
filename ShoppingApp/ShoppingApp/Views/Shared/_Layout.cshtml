@@ -17,7 +17,7 @@
                 <menu id="theMenu" class="navbar-collapse collapse" >
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a asp-controller="App" asp-="Index" class="nav-link">Home</a>
+                            <a asp-controller="App" asp-action="Index" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a asp-controller="App" asp-action="Contact" class="nav-link">Contact</a>
@@ -40,11 +40,11 @@
                                 <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
                             </li>
                         }
-                            <li class="nav-item" style="color: white; padding-top: 9px;  margin-left: 49px;">
-                                <i class="fas fa-shopping-cart"></i>
-                            </li>                        
+                        <li class="nav-item" style="color: white; padding-top: 9px;  margin-left: 49px;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </li>                        
                         <li class="nav-item">
-                            <a asp-controller="App" asp-action="Shop" class="nav-link">Cart</a>
+                            <a href="/App/Shop#/checkout" class="nav-link">Cart</a>
                         </li>
 
 
@@ -55,7 +55,7 @@
         </nav>
 
     </header>
-    <section class="container-fluid" style="padding:0px;">
+    <section class="container-fluid" style="padding:0px;margin-top: 60px;">
         <h2 class="text-center">@ViewBag.Title</h2>
         @RenderBody()
     </section>

@@ -11,6 +11,7 @@ import { Login } from "./login/login.component";
 import { Shop } from './shop/shop.component';
 import { Checkout } from './checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatRippleModule, MatSelectModule, MatSidenavModule, MatSliderModule, MatSlideToggleModule, MatSnackBarModule, MatSortModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatStepperModule, } from '@angular/material';
 var routes = [
     { path: "", component: Shop },
@@ -32,6 +33,7 @@ var AppModule = /** @class */ (function () {
             ],
             imports: [
                 BrowserModule,
+                BrowserAnimationsModule,
                 HttpClientModule,
                 //material
                 MatAutocompleteModule,

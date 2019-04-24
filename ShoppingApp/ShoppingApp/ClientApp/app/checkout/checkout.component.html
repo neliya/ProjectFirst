@@ -1,30 +1,42 @@
-﻿<div class="row">
-    <h3>Confirm Order</h3>
-    <table class="table table-bordered table-hover">
-        <tr *ngFor="let o of data.order.items">
-            <td><img src="/img/{{o.productId}}.jpg" alt="o.productTiel" class="img-fluid" /></td>
-            <td>{{o.productCategory}} {{o.productSize}} </td>
-            <td>{{o.quantity}}</td>
-            <td>{{o.unitPrice | currency: 'USD':true }}</td>
-            <td>{{o.unitPrice * o.quantity | currency: 'USD':true}}</td>
-        </tr>
-    </table>
-
-    <div class="col-md-4 col-md-offset-8 text-right">
-        <table class="table table-condensed">
-            <tr>
-                <td class="text-right">Subtotal</td>
-                <td class="text-right">{{ data.order.subTotal | currency: 'USD' : true}}</td>
-            </tr>
-            <tr>
-                <td class="text-right">Shipping</td>
-                <td class="text-right">$ 0.00</td>
-            </tr>
-            <tr>
-                <td class="text-right">Total:</td>
-                <td class="text-right">{{ data.order.subTotal | currency: 'USD' : true}}</td>
-            </tr>
-        </table>
-    </div>
-
+﻿
+<div *ngIf="errorMessage" class="alert alert-warning">{{errorMessage}}</div>
+<!-- Title -->
+<div class="title">
+    Shopping Bag
 </div>
+<div class="shopping-cart" *ngFor="let o of data.order.items">
+
+    <!-- Product #1 -->
+    <div class="item">
+        <div class="buttons">
+            <span class="delete-btn"></span>
+            <span class="like-btn" [ngClass]="isLikeButton ? 'is-active' : null" (click)="likeButton()"></span>
+        </div>
+
+        <div class="image">
+            <img src="/img/{{o.productId}}.jpg" alt="" style="width: 181px;height: 147px;"/>
+        </div>
+
+        <div class="description">
+            <span>{{o.productCategory}} {{o.productSize}}</span>
+            <span>{{o.quantity}}</span>
+            <span>{{o.unitPrice | currency: 'USD':true }}</span>
+            <span>{{o.unitPrice * o.quantity | currency: 'USD':true}}</span>
+        </div>
+
+        <div class="quantity">
+            <button class="plus-btn" type="button" name="button" (click)="plusButton(o)">
+                <img src="../plus.svg" alt="" />
+            </button>
+            <input type="text" [(ngModel)]="quantity" >
+            <button class="minus-btn" type="button" name="button" (click)="minusButton()" >
+                <img src="../minus.svg" alt="" />
+            </button>
+        </div>
+
+        <div class="total-price">{{ data.order.subTotal | currency: 'USD' : true}}</div>
+    </div>
+</div>
+<button id="paypal-checkout-btn" style="margin-left: 850px;"></button>
+
+

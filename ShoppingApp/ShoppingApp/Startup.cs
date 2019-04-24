@@ -93,7 +93,8 @@ namespace ShoppingApp
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
-                    seeder.SeedAsync().Wait();
+                    //seeder.SeedAsync().Wait();
+                    //seeder.AddRolesAsync().Wait();
                 }
             }
 

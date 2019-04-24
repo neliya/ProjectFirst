@@ -45,7 +45,6 @@ namespace ShoppingApp.Data
                 }
                    
             }
-
             if (!_context.Products.Any())
             {
                 var file = Path.Combine(_hosting.ContentRootPath, "Data/art.json");
@@ -55,7 +54,6 @@ namespace ShoppingApp.Data
                 _context.Products.AddRange(products);
 
                 var order = _context.Orders.Where(o => o.Id == 1).FirstOrDefault();
-
                 if(order == null)
                 {
                     order = new Order();
@@ -71,11 +69,35 @@ namespace ShoppingApp.Data
                     };
                     _context.Add(order);
                 }
+                
 
                 _context.SaveChanges();
             }
 
         }
 
+        internal async Task AddRolesAsync()
+        {
+            //await _context.Roles.AddAsync(new IdentityRole() {
+            //    Id = Guid.NewGuid().ToString(),
+            //    Name = "USER",
+            //    NormalizedName = "USER"
+               
+            //});
+
+            //await _context.Roles.AddAsync(new IdentityRole()
+            //{
+            //    Id = Guid.NewGuid().ToString(),
+            //    Name = "ADMIN",
+            //    NormalizedName = "ADMIN"
+
+            //});
+
+            await _context.UserRoles.AddAsync(new IdentityUserRole<string>() {
+                  RoleId = "57a8c4fa-d2d5-47d2-93c0-2cff53f44907",
+                  UserId = "f84cd9ae-0d8a-480c-ae00-3d5eaf01f4d0"
+            });
+           await _context.SaveChangesAsync();
+        }
     }
 }

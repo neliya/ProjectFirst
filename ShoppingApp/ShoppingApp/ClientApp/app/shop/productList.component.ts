@@ -17,7 +17,7 @@ export class ProductList implements OnInit{
 
     public products: Product[] = [];
 
-    async ngOnInit(): Promise<void> {
+    async ngOnInit(): Promise<any> {
         await this.dataService.loadProducts();
         this.products = this.dataService.products;
     }

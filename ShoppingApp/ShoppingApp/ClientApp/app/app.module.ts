@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { ProductList } from "./shop/productList.component";
 import { DataService } from './shared/dataService';
@@ -11,6 +10,8 @@ import { Login } from "./login/login.component";
 import { Shop } from './shop/shop.component';
 import { Checkout } from './checkout/checkout.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import {
     MatAutocompleteModule,
     MatButtonModule,
@@ -63,6 +64,7 @@ let routes = [
   ],
   imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       HttpClientModule,
       //material
       MatAutocompleteModule,

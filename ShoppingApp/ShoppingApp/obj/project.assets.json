@@ -4686,7 +4686,7 @@
   },
   "libraries": {
     "AutoMapper/8.0.0": {
-      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
       "type": "package",
       "path": "automapper/8.0.0",
       "files": [
@@ -5616,7 +5616,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
-      "sha512": "fe1+dpy+eM4IX1zodsvkihO1Spuj0NecfStWzvkYoMo7/ziOsqSv4vFK36ZpBfHa4gpdCEwaU46EPzdq+ZDYhQ==",
+      "sha512": "ab4+TZw3Sxqrr5TwrwVyABeQkhSxYMJXgG6yZw7T+r6Vz+hcOt+pK79o15ESG7kZvWAK9wRG7emnTIia5O6R1Q==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hasTools": true,
@@ -12780,23 +12780,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Neliya\\.nuget\\packages\\": {},
+    "C:\\Users\\neliya.gurung\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Neliya\\source\\ProjectFirst\\ShoppingApp\\ShoppingApp\\ShoppingApp.csproj",
+      "projectUniqueName": "C:\\Users\\neliya.gurung\\source\\repos\\ShoppingApp\\ShoppingApp\\ShoppingApp.csproj",
       "projectName": "ShoppingApp",
-      "projectPath": "C:\\Users\\Neliya\\source\\ProjectFirst\\ShoppingApp\\ShoppingApp\\ShoppingApp.csproj",
-      "packagesPath": "C:\\Users\\Neliya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Neliya\\source\\ProjectFirst\\ShoppingApp\\ShoppingApp\\obj\\",
+      "projectPath": "C:\\Users\\neliya.gurung\\source\\repos\\ShoppingApp\\ShoppingApp\\ShoppingApp.csproj",
+      "packagesPath": "C:\\Users\\neliya.gurung\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\neliya.gurung\\source\\repos\\ShoppingApp\\ShoppingApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Neliya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\neliya.gurung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12804,7 +12804,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://www.myget.org/F/aib-core/auth/4475443e-56fe-493a-9188-bebe842d7e36/api/v3/index.json": {},
+        "https://www.myget.org/F/aib-iam/auth/4475443e-56fe-493a-9188-bebe842d7e36/api/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
@@ -12844,6 +12846,7 @@
             "version": "[2.0.1, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
