@@ -72,7 +72,7 @@ using ShoppingApp.Data.Entities;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 534, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e7d911a2f074bb5b95a1927f63b5c18", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32e89c7f227a47cdbc2f838d3aaed1a4", async() => {
                 BeginContext(31, 27, true);
                 WriteLiteral("\r\n    <title>Shopping App: ");
                 EndContext();
@@ -90,7 +90,7 @@ using ShoppingApp.Data.Entities;
     ");
                 EndContext();
                 BeginContext(503, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9c8d79f4fe454b81bdbea35744c1ffa6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f893d5dac06d4fe5a1af00fdd58e0a8d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -124,7 +124,7 @@ using ShoppingApp.Data.Entities;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(561, 3012, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6f06629d345c45c98e26528e636305b0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2826e2325c4249cd9b40ff864f854f6c", async() => {
                 BeginContext(567, 669, true);
                 WriteLiteral(@"
     <header class=""container-fluid"" style=""padding: 0px;"">
@@ -140,7 +140,7 @@ using ShoppingApp.Data.Entities;
                             ");
                 EndContext();
                 BeginContext(1236, 68, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "289b05a2b24942778a08f5d87b108ba7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f42907bf8f6e4711824110cb3082df17", async() => {
                     BeginContext(1296, 4, true);
                     WriteLiteral("Home");
                     EndContext();
@@ -165,7 +165,7 @@ using ShoppingApp.Data.Entities;
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"nav-item\">\r\n                            ");
                 EndContext();
                 BeginContext(1412, 73, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b91fcbd402704f3886b77e856a9c4757", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d3d52bd9365412b937f3ecaeed7f4b6", async() => {
                     BeginContext(1474, 7, true);
                     WriteLiteral("Contact");
                     EndContext();
@@ -190,7 +190,7 @@ using ShoppingApp.Data.Entities;
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"nav-item\">\r\n                            ");
                 EndContext();
                 BeginContext(1593, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ce031d7eff9487ab3d2c03d6589f419", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "097df2ed5eb443869ac62ec04ef0a8f2", async() => {
                     BeginContext(1653, 5, true);
                     WriteLiteral("About");
                     EndContext();
@@ -215,7 +215,7 @@ using ShoppingApp.Data.Entities;
                 WriteLiteral("\r\n                        </li>\r\n                        <li class=\"nav-item\">\r\n                            ");
                 EndContext();
                 BeginContext(1770, 67, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95101f1e8783455abe71658a51923677", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "499023ae83284210b2f07303cc986763", async() => {
                     BeginContext(1829, 4, true);
                     WriteLiteral("Shop");
                     EndContext();
@@ -249,7 +249,7 @@ using ShoppingApp.Data.Entities;
                 WriteLiteral("                            <li class=\"nav-item\">\r\n                                ");
                 EndContext();
                 BeginContext(2041, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "05817fe550c64687b854948a965f3679", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ddfdbe7975ff4fdf95e2648e914a28fb", async() => {
                     BeginContext(2106, 6, true);
                     WriteLiteral("Logout");
                     EndContext();
@@ -284,7 +284,7 @@ using ShoppingApp.Data.Entities;
                 WriteLiteral("                            <li class=\"nav-item\">\r\n                                ");
                 EndContext();
                 BeginContext(2320, 73, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ad19709bcaf4d6498018885195d60bc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ddb8a13c8324386a55f6cdb52fa915b", async() => {
                     BeginContext(2384, 5, true);
                     WriteLiteral("Login");
                     EndContext();

@@ -36,11 +36,30 @@
 
     {
         int imgId = item.Id;
-        <div class="row" >
+        <div class="row">
             <div class="column">
-                <div class="card"> 
-                    <img src="~/img/@(imgId).jpg") >
-                    <h5>@item.Title @item.Description</h5>
+                <div class="card">
+                    <img src="~/img/@(imgId).jpg" )>
+                    <p>@item.Title @item.Description</p>
+                    <p style="float: left; font-weight: bold;">@item.Price</p>
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+    <h3 style="text-align:center;">Today's Deals under $25</h3>
+
+    @foreach (var item in featureProducts)
+
+    {
+        int imgId = item.Id;
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="~/img/@(imgId).jpg" )>
+                    <p>@item.Title @item.Description</p>
                     <p style="float: left; font-weight: bold;">@item.Price</p>
                 </div>
             </div>
