@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 export class Login {
 
 
-    constructor(private data: DataService, private router: Router ) {
+    constructor(private dataService: DataService, private router: Router ) {
     }
     errorMessage: string = "";
     public creds = {
@@ -17,19 +17,33 @@ export class Login {
         password: ""
     };
 
-    onLogin() {
-        //Call the login Service
-        this.data.login(this.creds)
-            .subscribe(success => {
-                if (success) {
-                    if (this.data.order.items.length == 0) {
-                        this.router.navigate([""]);
-                    } else {
-                        this.router.navigate(["checkout"]);
-                    }
-                }
-            }, err => this.errorMessage = "Failed to login")
+
+    async onLogin(): Promise<void> {
+        var result = await this.dataService.login(this.creds);
+        if (result) {
+            if (this.dataService.order.items.length == 0) {
+                this.router.navigate([""]);
+            } else {
+                this.router.navigate(["checkout"]);
+            }
+        } else {
+            this.errorMessage = "Failed to login";
+        }
     }
+
+    //onLogin() {
+    //    //Call the login Service
+    //    this.data.login(this.creds)
+    //        .subscribe(success => {
+    //            if (success) {
+    //                if (this.data.order.items.length == 0) {
+    //                    this.router.navigate([""]);
+    //                } else {
+    //                    this.router.navigate(["checkout"]);
+    //                }
+    //            }
+    //        }, err => this.errorMessage = "Failed to login")
+    //}
 
 
 }

@@ -2,22 +2,25 @@ import * as tslib_1 from "tslib";
 import { Component } from "@angular/core";
 import { DataService } from '../shared/dataService';
 var ProductList = /** @class */ (function () {
-    function ProductList(data) {
-        this.data = data;
+    function ProductList(dataService) {
+        this.dataService = dataService;
         this.products = [];
-        this.products = data.products;
     }
     ProductList.prototype.ngOnInit = function () {
-        var _this = this;
-        this.data.loadProducts()
-            .subscribe(function (success) {
-            if (success) {
-                _this.products = _this.data.products;
-            }
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.dataService.loadProducts()];
+                    case 1:
+                        _a.sent();
+                        this.products = this.dataService.products;
+                        return [2 /*return*/];
+                }
+            });
         });
     };
     ProductList.prototype.addProduct = function (product) {
-        this.data.AddToOrder(product);
+        this.dataService.AddToOrder(product);
     };
     ProductList = tslib_1.__decorate([
         Component({

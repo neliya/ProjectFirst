@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Product } from "./product";
 import { Order, OrderItem } from "./order";
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 
 @Injectable()
@@ -34,8 +34,8 @@ export class DataService {
         var response = await this.http.post("/account/createtoken", creds).toPromise();
 
         if (response != null) {
-            this.token = response.token;
-            this.tokenExpiration = response.expiration;
+            this.token = response['token'];
+            this.tokenExpiration = response['expiration'];
         }
         return true;
     }

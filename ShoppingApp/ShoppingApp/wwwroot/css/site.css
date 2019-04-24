@@ -1,74 +1,47 @@
-﻿
-
-/*body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+﻿* {
+    box-sizing: border-box;
 }
 
-input, textarea {
-    font-size: 18px;
-    width: 200px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-input[type=submit]{
-    width: auto;
-}
-
-label {
-    font-size: 16px;
-}
-
-.product-info{
-    border: 1px solid grey;
-    display: inline-block;
-    padding: 8px 2px;
-    margin: 2px;
-    width: 650px;
-    background-color: lightgray;
-   
-}
-
-.product-info img{
+/* Float four columns side by side */
+.column {
     float: left;
-    max-width: 450px;
+    padding: 0 10px;
 }
 
-#loginToggle{
-    cursor:pointer;
+/* Remove extra left and right margins, due to padding */
+.row {
+    float: left;
+    margin-left: 20px;
 }
 
-.popup-form{
-    padding: 5px;
-    border: 2px black inset;
-    display: inline-block;
-}
-
-    .popup-form input {
-        width: 200px;
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
-.popup-form label{
-    width: 150px;
-    display: inline-block;
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
 }
-
-.popup-form input[type=checkbox], .popup-form input[type=submit]{
-    width: auto;
-}
-
-menu li{
-    display: inline;
-}
-
-menu li::after{
-    content: ' | ';
-}*/
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
-    text-align: center;
+    padding: 16px;
+    background-color: #f1f1f1;
     font-family: arial;
+    height: 298px;
 }
 
 .price {
