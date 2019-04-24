@@ -1,4 +1,12 @@
-﻿* {
+﻿
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    background-color: #f1f1f1;
+}
+
+* {
     box-sizing: border-box;
 }
 
@@ -35,7 +43,7 @@ body {
     }
 }
 
-.card {
+.card_one {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -50,7 +58,7 @@ body {
     font-size: 22px;
 }
 
-.card button {
+.card_one button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -62,11 +70,15 @@ body {
     font-size: 18px;
 }
 
-    .card button:hover {
+    .card_one button:hover {
         opacity: 0.7;
     }
 
-    .card p {
-        display: inline;
-        margin: 0px;
-    }
+.card_one p {
+    display: inline;
+    margin: 0px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
