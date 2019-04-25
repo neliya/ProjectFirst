@@ -66,7 +66,7 @@ namespace ShoppingApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void  Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -87,16 +87,46 @@ namespace ShoppingApp
                     new { controller = "App", Action = "Index" });
             });
 
-            if (env.IsDevelopment())
-            {
-                //Seed the database
-                using (var scope = app.ApplicationServices.CreateScope())
-                {
-                    var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
-                    //seeder.SeedAsync().Wait();
-                    //seeder.AddRolesAsync().Wait();
-                }
-            }
+            //var task = new Task(async () =>
+            //{
+
+            //    using (var scope = app.ApplicationServices.CreateScope())
+            //    {
+            //        var ser = scope.ServiceProvider.GetService<IShoppingAppRepository>();
+
+                    
+
+            //        var cart = await ser.AddCart(Guid.Parse("30ffbea1-e9c9-4574-a0e4-f0016d86dfda"));
+
+
+
+            //        var cartItem = await ser.AddCartItem(cart.Id, 1, 1);
+            //        var items = ser.GetCartItems(cart.Id);
+
+
+            //    }
+
+            //});
+            //task.Start();
+            //task.Wait();
+
+
+
+
+            //if (env.IsDevelopment())
+            //{
+            //    //Seed the database
+            //    using (var scope = app.ApplicationServices.CreateScope())
+            //    {
+            //       var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
+
+            //        seeder.TestCart().Wait();
+            //        seeder.SeedAsync().Wait();
+            //        seeder.AddRolesAsync().Wait();
+
+
+            //    }
+            //}
 
         }
     }

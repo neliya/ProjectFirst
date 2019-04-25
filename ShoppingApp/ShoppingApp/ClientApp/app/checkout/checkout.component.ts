@@ -76,16 +76,16 @@ export class Checkout implements AfterViewChecked {
     }
 
 
-    likeButton(y) {
-        this.isLikeButton = !this.isLikeButton;
+    delete(product: any) {
+        var deleteProduct = this.data.products.findIndex(product.productId);
+    
     }
 
-    plusButton(product: Product) {
-        debugger;
-        
+    plusButton(product: any) {
+        product.quantity++;        
     }
 
-    minusButton() {
-        this.quantity--;
+    minusButton(product: any) {
+        product.quantity--;
     }
 }

@@ -19,6 +19,35 @@ namespace ShoppingApp.Data
             _logger = logger;
         }
 
+        public async Task<Cart> AddCart(Guid userId)
+        {
+           var res = await _context.Cart.AddAsync(new Cart() {
+                IsDeleted = false,
+                CreatedDate = DateTime.UtcNow,
+                UserId = userId,
+                
+            });
+
+            await _context.SaveChangesAsync();
+
+            return res.Entity ;
+        }
+
+        public async Task<CartItem> AddCartItem( int cartId, int ProductId, int quantity)
+        {
+            var res = await _context.CartItems.AddAsync(new CartItem() {
+                 CartId = cartId,
+                 DateCreated = DateTime.UtcNow,
+                 ProductId = ProductId,
+                 Quantity = quantity,
+                
+            });
+
+            await _context.SaveChangesAsync();
+
+            return res.Entity;
+        }
+
         public void AddEntity(object model)
         {
             _context.Add(model);
@@ -59,6 +88,14 @@ namespace ShoppingApp.Data
             }
         }
 
+        public List<CartItem> GetCartItems(int cartId)
+        {
+            var res =  _context.CartItems.Where(x => x.CartId == cartId);
+
+            return res.ToList();
+
+        }
+
         public Order GetOrderById(string username, int id)
         {
             return _context.Orders
@@ -82,6 +119,17 @@ namespace ShoppingApp.Data
         public IEnumerable<Product> GetProductsByCategory(string category)
         {
             return _context.Products.OrderBy(p => p.Category == category).ToList();
+        }
+
+        public async Task<Cart> GetUserCart(Guid userId)
+        {
+            var cart = await this._context.Cart.FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (cart == null) {
+                cart = await this.AddCart(userId);
+            }
+
+            return cart;
         }
 
         public bool SaveAll()

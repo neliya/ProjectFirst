@@ -9,8 +9,7 @@
     <!-- Product #1 -->
     <div class="item">
         <div class="buttons">
-            <span class="delete-btn"></span>
-            <span class="like-btn" [ngClass]="isLikeButton ? 'is-active' : null" (click)="likeButton()"></span>
+            <span class="delete-btn" (click)="delete(o)"></span>
         </div>
 
         <div class="image">
@@ -28,7 +27,7 @@
             <button class="plus-btn" type="button" name="button" (click)="plusButton(o)">
                 <img src="../plus.svg" alt="" />
             </button>
-            <input type="text" [(ngModel)]="quantity" >
+            <input type="text" [(ngModel)]="o.quantity" >
             <button class="minus-btn" type="button" name="button" (click)="minusButton()" >
                 <img src="../minus.svg" alt="" />
             </button>

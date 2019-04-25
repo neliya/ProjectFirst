@@ -62,14 +62,14 @@ var Checkout = /** @class */ (function () {
             }
         }, function (err) { return _this.errorMessage = "Failed to save order"; });
     };
-    Checkout.prototype.likeButton = function (y) {
-        this.isLikeButton = !this.isLikeButton;
+    Checkout.prototype.delete = function (product) {
+        var deleteProduct = this.data.products.findIndex(product.productId);
     };
-    Checkout.prototype.plusButton = function (id) {
-        this.quantity++;
+    Checkout.prototype.plusButton = function (product) {
+        product.quantity++;
     };
-    Checkout.prototype.minusButton = function () {
-        this.quantity--;
+    Checkout.prototype.minusButton = function (product) {
+        product.quantity--;
     };
     Checkout = tslib_1.__decorate([
         Component({

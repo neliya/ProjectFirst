@@ -196,7 +196,7 @@ module.exports = ".checkout-thumb{\r\n    max-width: 100px;\r\n}\r\n\r\ntable {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n<!-- Title -->\r\n<div class=\"title\">\r\n    Shopping Bag\r\n</div>\r\n<div class=\"shopping-cart\" *ngFor=\"let o of data.order.items\">\r\n\r\n    <!-- Product #1 -->\r\n    <div class=\"item\">\r\n        <div class=\"buttons\">\r\n            <span class=\"delete-btn\"></span>\r\n            <span class=\"like-btn\" [ngClass]=\"isLikeButton ? 'is-active' : null\" (click)=\"likeButton()\"></span>\r\n        </div>\r\n\r\n        <div class=\"image\">\r\n            <img src=\"/img/{{o.productId}}.jpg\" alt=\"\" style=\"width: 181px;height: 147px;\"/>\r\n        </div>\r\n\r\n        <div class=\"description\">\r\n            <span>{{o.productCategory}} {{o.productSize}}</span>\r\n            <span>{{o.quantity}}</span>\r\n            <span>{{o.unitPrice | currency: 'USD':true }}</span>\r\n            <span>{{o.unitPrice * o.quantity | currency: 'USD':true}}</span>\r\n        </div>\r\n\r\n        <div class=\"quantity\">\r\n            <button class=\"plus-btn\" type=\"button\" name=\"button\" (click)=\"plusButton(o)\">\r\n                <img src=\"../plus.svg\" alt=\"\" />\r\n            </button>\r\n            <input type=\"text\" [(ngModel)]=\"quantity\" >\r\n            <button class=\"minus-btn\" type=\"button\" name=\"button\" (click)=\"minusButton()\" >\r\n                <img src=\"../minus.svg\" alt=\"\" />\r\n            </button>\r\n        </div>\r\n\r\n        <div class=\"total-price\">{{ data.order.subTotal | currency: 'USD' : true}}</div>\r\n    </div>\r\n</div>\r\n<button id=\"paypal-checkout-btn\" style=\"margin-left: 850px;\"></button>\r\n\r\n\r\n"
+module.exports = "\r\n<div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n<!-- Title -->\r\n<div class=\"title\">\r\n    Shopping Bag\r\n</div>\r\n<div class=\"shopping-cart\" *ngFor=\"let o of data.order.items\">\r\n\r\n    <!-- Product #1 -->\r\n    <div class=\"item\">\r\n        <div class=\"buttons\">\r\n            <span class=\"delete-btn\" (click)=\"delete(o)\"></span>\r\n        </div>\r\n\r\n        <div class=\"image\">\r\n            <img src=\"/img/{{o.productId}}.jpg\" alt=\"\" style=\"width: 181px;height: 147px;\"/>\r\n        </div>\r\n\r\n        <div class=\"description\">\r\n            <span>{{o.productCategory}} {{o.productSize}}</span>\r\n            <span>{{o.quantity}}</span>\r\n            <span>{{o.unitPrice | currency: 'USD':true }}</span>\r\n            <span>{{o.unitPrice * o.quantity | currency: 'USD':true}}</span>\r\n        </div>\r\n\r\n        <div class=\"quantity\">\r\n            <button class=\"plus-btn\" type=\"button\" name=\"button\" (click)=\"plusButton(o)\">\r\n                <img src=\"../plus.svg\" alt=\"\" />\r\n            </button>\r\n            <input type=\"text\" [(ngModel)]=\"o.quantity\" >\r\n            <button class=\"minus-btn\" type=\"button\" name=\"button\" (click)=\"minusButton()\" >\r\n                <img src=\"../minus.svg\" alt=\"\" />\r\n            </button>\r\n        </div>\r\n\r\n        <div class=\"total-price\">{{ data.order.subTotal | currency: 'USD' : true}}</div>\r\n    </div>\r\n</div>\r\n<button id=\"paypal-checkout-btn\" style=\"margin-left: 850px;\"></button>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -278,14 +278,14 @@ var Checkout = /** @class */ (function () {
             }
         }, function (err) { return _this.errorMessage = "Failed to save order"; });
     };
-    Checkout.prototype.likeButton = function (y) {
-        this.isLikeButton = !this.isLikeButton;
+    Checkout.prototype.delete = function (product) {
+        var deleteProduct = this.data.products.findIndex(product.productId);
     };
     Checkout.prototype.plusButton = function (product) {
-        debugger;
+        product.quantity++;
     };
-    Checkout.prototype.minusButton = function () {
-        this.quantity--;
+    Checkout.prototype.minusButton = function (product) {
+        product.quantity--;
     };
     Checkout = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -414,6 +414,24 @@ var DataService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.http.get("/api/products").toPromise()];
                     case 1:
                         response = _a.sent();
+                        if (response != null) {
+                            this.products = response;
+                        }
+                        return [2 /*return*/, true];
+                }
+            });
+        }); };
+        this.loadCart = function () { return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, function () {
+            var headers, response;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+                        headers.set('Authorization', 'Bearer ' + this.token);
+                        return [4 /*yield*/, this.http.get("/api/get-cart", { headers: headers }).toPromise()];
+                    case 1:
+                        response = _a.sent();
+                        debugger;
                         if (response != null) {
                             this.products = response;
                         }

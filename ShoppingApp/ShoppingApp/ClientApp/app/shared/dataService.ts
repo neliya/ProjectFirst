@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { Product } from "./product";
 import { Order, OrderItem } from "./order";
@@ -19,6 +19,18 @@ export class DataService {
     loadProducts = async (): Promise<boolean> => {
         var response = await this.http.get("/api/products").toPromise();
 
+        if (response != null) {
+            this.products = response as Product[];
+        }
+
+        return true;
+    }
+
+    loadCart = async (): Promise<boolean> => {
+        var headers = new HttpHeaders();
+        headers.set('Authorization', 'Bearer ' + this.token);
+        var response = await this.http.get("/api/get-cart", { headers: headers }).toPromise();
+        debugger;
         if (response != null) {
             this.products = response as Product[];
         }
@@ -61,6 +73,8 @@ export class DataService {
     //}
 
     public AddToOrder(newProduct: Product) {
+
+
         let item: OrderItem = this.order.items.find(i => i.productId == newProduct.id);
 
         if (item) {

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using ShoppingApp.Data.Entities;
 
 namespace ShoppingApp.Data
@@ -15,5 +17,12 @@ namespace ShoppingApp.Data
 
         Order GetOrderById(int id);
         void AddEntity(object model);
+
+        Task<Cart> AddCart(Guid userId );
+        Task<CartItem> AddCartItem( int cartId, int ProductId, int quantity);
+        List<CartItem> GetCartItems(int cartId);
+
+        Task<Cart> GetUserCart(Guid userId);
+
     }
 }
