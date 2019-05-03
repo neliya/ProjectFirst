@@ -1,6 +1,6 @@
 import * as tslib_1 from "tslib";
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Order, OrderItem } from "./order";
 import { map } from 'rxjs/operators';
 var DataService = /** @class */ (function () {
@@ -17,6 +17,24 @@ var DataService = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.http.get("/api/products").toPromise()];
                     case 1:
                         response = _a.sent();
+                        if (response != null) {
+                            this.products = response;
+                        }
+                        return [2 /*return*/, true];
+                }
+            });
+        }); };
+        this.loadCart = function () { return tslib_1.__awaiter(_this, void 0, void 0, function () {
+            var headers, response;
+            return tslib_1.__generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        headers = new HttpHeaders();
+                        headers.set('Authorization', 'Bearer ' + this.token);
+                        return [4 /*yield*/, this.http.get("/api/get-cart", { headers: headers }).toPromise()];
+                    case 1:
+                        response = _a.sent();
+                        debugger;
                         if (response != null) {
                             this.products = response;
                         }
