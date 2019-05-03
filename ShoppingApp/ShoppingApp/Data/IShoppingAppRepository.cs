@@ -23,6 +23,6 @@ namespace ShoppingApp.Data
         List<CartItem> GetCartItems(int cartId);
 
         Task<Cart> GetUserCart(Guid userId);
-
+        void AddOrder(Order newOrder);
     }
 }

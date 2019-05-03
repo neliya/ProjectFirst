@@ -5,28 +5,29 @@
 }
 <div class="row" style="float: none !important;margin-top: 60px;">
     <div class="col-md-4 offset-md-4 detail-card">
-
         <div style="display:flex; align-items:center;">
-                <h5 class="detailheader">Category</h5>
-                <span class="detailvalue">@Model.Category</span>
-            
-
+            <h5 class="detailheader">Category</h5>
+            <span class="detailvalue">@Model.Category</span>
+        </div>
+        <div style="display:flex; align-items:center;">
             <h5 class="detailheader">Size</h5>
             <span class="detailvalue">@Model.Size</span>
-
+        </div>
+        <div style="display:flex; align-items:center;">
             <h5 class="detailheader">Price</h5>
             <span class="detailvalue">@Model.Price</span>
-
+        </div>
+        <div style="display:flex; align-items:center;">
             <h5 class="detailheader">Title</h5>
             <span class="detailvalue">@Model.Title</span>
-
+        </div>
+        <div style="display:flex; align-items:center;">
             <h5 class="detailheader">Description</h5>
             <span class="detailvalue">@Model.Description</span>
-        </div>     
-        <div class="btn btn-primary" style="margin-left: 219px;">
+        </div>
+        <div class="btn btn-primary" >
             <a asp-action="Edit" asp-route-id="@Model.Id" style="color: white;">Edit</a> |
             <a asp-action="Index" style="color: white;">Back to List</a>
         </div>
     </div>
-
 </div>

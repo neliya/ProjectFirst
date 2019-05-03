@@ -59,7 +59,7 @@ namespace ShoppingApp.Controllers
             ViewBag.Title = "About Information";
             return View();
         }
-
+        [Authorize]
         public IActionResult Shop()
         {
                          
