@@ -14,6 +14,7 @@ export class DataService {
     private tokenExpiration: Date;
 
     public products: Product[] = [];
+    public orders: Order[] = [];
     public order: Order = new Order();
 
     loadProducts = async (): Promise<boolean> => {
@@ -26,36 +27,39 @@ export class DataService {
         return true;
     }
 
-    loadCart = async (): Promise<boolean> => {
+    loadOrders = async (): Promise<boolean> => {
         var headers = new HttpHeaders();
-        headers.set('Authorization', 'Bearer ' + this.token);
-        var response = await this.http.get("/api/get-cart", { headers: headers }).toPromise();
-        debugger;
+        headers.set('Authorization', 'Bearer ' + localStorage.getItem("TOKEN"));
+        var response = await this.http.get("/api/orders").toPromise();
         if (response != null) {
-            this.products = response as Product[];
+            this.orders = response as Order[];
         }
 
         return true;
     }
 
 
-    //loadProducts(): Observable<boolean> {
-    //    return this.http.get("api/products")
-    //        .pipe(map((data: any[]) => {
-    //            this.products = data;
-    //            return true;
-    //        }));
-    //}
+    loadCart = async (): Promise<boolean> => {
+        var headers = new HttpHeaders();
+        headers.set('Authorization', 'Bearer ' + localStorage.getItem("TOKEN"));
+        var response = await this.http.get("/api/get-cart", { headers: headers }).toPromise();
+        if (response != null) {
+            this.products = response as Product[];
+        }
 
-   
+        return true;
+    }   
 
     public get loginRequired(): boolean {
+        debugger;
         return this.token.length == 0 || this.tokenExpiration > new Date();
     }
 
     login(creds): Observable<boolean> {
         return this.http.post("/account/createtoken", creds)
             .pipe(map((data: any) => {
+                debugger;
+                localStorage.setItem("TOKEN",data.token);
                 this.token = data.token;
                 this.tokenExpiration = data.expiration;
                 return true;
@@ -93,7 +97,12 @@ export class DataService {
     }
 
     public checkout() {
-        return this.http.post("api/orders", this.order)
+        if (!this.order.orderNumber) {
+            this.order.orderNumber = this.order.orderDate.getFullYear().toString() + this.order.orderDate.getTime();
+        }
+        return this.http.post("api/orders", this.order, {
+            headers: new HttpHeaders().set("Authorization", "Bearer" + this.token)
+        })
             .pipe(map(resposne => {
                 this.order = new Order();
                 return true;

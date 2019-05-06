@@ -12,11 +12,7 @@ using System.Net;
 using System.Threading.Tasks;
 
 namespace ShoppingApp.Controllers
-{
-    
-
-   
-  
+{ 
   
     public class ProductsController : Controller
     {
@@ -44,7 +40,7 @@ namespace ShoppingApp.Controllers
             }
 
         }
-
+      
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]

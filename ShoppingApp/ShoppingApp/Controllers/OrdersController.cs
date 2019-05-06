@@ -14,8 +14,9 @@ using System.Threading.Tasks;
 
 namespace ShoppingApp.Controllers
 {
+  
     [Route("api/[Controller]")]
-    [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes=JwtBearerDefaults.AuthenticationScheme)]
     public class OrdersController : Controller
     {
         private readonly IShoppingAppRepository _repository;
@@ -33,6 +34,7 @@ namespace ShoppingApp.Controllers
         }
 
         [HttpGet]
+        [Route("api/orders")]
         public IActionResult Get(bool includeItems = true)
         {
             try
@@ -82,7 +84,7 @@ namespace ShoppingApp.Controllers
 
                     var currentUser = await _userManager.FindByNameAsync(User.Identity.Name);
                     newOrder.User = currentUser;
-                    _repository.AddEntity(newOrder);
+                    _repository.AddOrder(newOrder);
                     if (_repository.SaveAll())
                     {
                         return Created($"/api/orders/{newOrder.Id}", _mapper.Map<Order, OrderViewModel>(newOrder));

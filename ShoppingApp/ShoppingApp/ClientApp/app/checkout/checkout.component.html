@@ -2,18 +2,16 @@
 <div *ngIf="errorMessage" class="alert alert-warning">{{errorMessage}}</div>
 <!-- Title -->
 <div class="title">
-    Shopping Bag
+    Checkout
 </div>
-<div class="shopping-cart" *ngFor="let o of data.order.items">
-
-    <!-- Product #1 -->
-    <div class="item">
+<div class="row" style="float: none !important;margin-top: 60px;">
+    <div class="col-md-4 offset-md-4 detail-card item"  style="height: auto;" *ngFor="let o of data.order.items">
         <div class="buttons">
             <span class="delete-btn" (click)="delete(o)"></span>
         </div>
 
         <div class="image">
-            <img src="/img/{{o.productId}}.jpg" alt="" style="width: 181px;height: 147px;"/>
+            <img src="/img/{{o.productId}}.jpg" alt="" style="width: 181px;height: 147px;" />
         </div>
 
         <div class="description">
@@ -27,8 +25,8 @@
             <button class="plus-btn" type="button" name="button" (click)="plusButton(o)">
                 <img src="../plus.svg" alt="" />
             </button>
-            <input type="text" [(ngModel)]="o.quantity" >
-            <button class="minus-btn" type="button" name="button" (click)="minusButton()" >
+            <input type="text" [(ngModel)]="o.quantity">
+            <button class="minus-btn" type="button" name="button" (click)="minusButton()">
                 <img src="../minus.svg" alt="" />
             </button>
         </div>
@@ -36,6 +34,6 @@
         <div class="total-price">{{ data.order.subTotal | currency: 'USD' : true}}</div>
     </div>
 </div>
-<button id="paypal-checkout-btn" style="margin-left: 850px;"></button>
+<button id="paypal-checkout-btn" style="margin-right: 606px; float: right;"></button>
 
 

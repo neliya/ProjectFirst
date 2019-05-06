@@ -5,6 +5,7 @@ var ProductList = /** @class */ (function () {
     function ProductList(dataService) {
         this.dataService = dataService;
         this.products = [];
+        this.orders = [];
     }
     ProductList.prototype.ngOnInit = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
@@ -13,7 +14,11 @@ var ProductList = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.dataService.loadProducts()];
                     case 1:
                         _a.sent();
+                        return [4 /*yield*/, this.dataService.loadOrders()];
+                    case 2:
+                        _a.sent();
                         this.products = this.dataService.products;
+                        this.orders = this.dataService.orders;
                         return [2 /*return*/];
                 }
             });

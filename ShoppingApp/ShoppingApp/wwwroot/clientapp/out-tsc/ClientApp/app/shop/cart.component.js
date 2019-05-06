@@ -8,12 +8,13 @@ var Cart = /** @class */ (function () {
         this.router = router;
     }
     Cart.prototype.onCheckout = function () {
-        if (this.data.loginRequired) {
-            this.router.navigate(["login"]);
-        }
-        else {
-            this.router.navigate(["checkout"]);
-        }
+        debugger;
+        this.router.navigate(["checkout"]);
+        //if (this.data.loginRequired) {
+        //    this.router.navigate(["login"]);
+        //} else {
+        //    this.router.navigate(["checkout"]);
+        //}
     };
     Cart = tslib_1.__decorate([
         Component({
