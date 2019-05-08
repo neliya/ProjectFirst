@@ -1,0 +1,30 @@
+﻿@model ShoppingApp.Data.Entities.Order
+
+@{
+    ViewData["Title"] = "Edit Orders ";
+}
+<div class="row" style="float: none !important;margin-top: 60px;">
+    <div class="col-md-4 offset-md-4 detail-card">
+        <div class="btn btn-primary" style="margin-left: 219px;">
+            <a asp-action="Index" style="color: white;">Back to List</a>
+        </div>
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control inputfield" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderNumber" class="control-label"></label>
+                <input asp-for="OrderNumber" class="form-control inputfield" />
+                <span asp-validation-for="OrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

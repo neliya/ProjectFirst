@@ -15,8 +15,8 @@ using System.Threading.Tasks;
 namespace ShoppingApp.Controllers
 {
   
-    [Route("api/[Controller]")]
-    [Authorize(AuthenticationSchemes=JwtBearerDefaults.AuthenticationScheme)]
+    
+
     public class OrdersController : Controller
     {
         private readonly IShoppingAppRepository _repository;

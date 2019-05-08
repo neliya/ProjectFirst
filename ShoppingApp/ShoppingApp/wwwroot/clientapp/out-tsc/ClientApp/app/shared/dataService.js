@@ -30,13 +30,12 @@ var DataService = /** @class */ (function () {
             return tslib_1.__generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        debugger;
                         headers = new HttpHeaders();
                         headers.set('Authorization', 'Bearer ' + localStorage.getItem("TOKEN"));
-                        debugger;
                         return [4 /*yield*/, this.http.get("/api/orders").toPromise()];
                     case 1:
                         response = _a.sent();
-                        debugger;
                         if (response != null) {
                             this.orders = response;
                         }
@@ -64,7 +63,6 @@ var DataService = /** @class */ (function () {
     }
     Object.defineProperty(DataService.prototype, "loginRequired", {
         get: function () {
-            debugger;
             return this.token.length == 0 || this.tokenExpiration > new Date();
         },
         enumerable: true,
@@ -74,7 +72,6 @@ var DataService = /** @class */ (function () {
         var _this = this;
         return this.http.post("/account/createtoken", creds)
             .pipe(map(function (data) {
-            debugger;
             localStorage.setItem("TOKEN", data.token);
             _this.token = data.token;
             _this.tokenExpiration = data.expiration;
@@ -110,10 +107,10 @@ var DataService = /** @class */ (function () {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString() + this.order.orderDate.getTime();
         }
-        return this.http.post("api/orders", this.order, {
+        return this.http.post("/api/orders", this.order, {
             headers: new HttpHeaders().set("Authorization", "Bearer" + this.token)
         })
-            .pipe(map(function (resposne) {
+            .pipe(map(function (response) {
             _this.order = new Order();
             return true;
         }));

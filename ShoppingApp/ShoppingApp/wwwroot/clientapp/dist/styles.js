@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9DOlxcVXNlcnNcXG5lbGl5YS5ndXJ1bmdcXHNvdXJjZVxccmVwb3NcXFNob3BwaW5nQXBwXFxTaG9wcGluZ0FwcC9DbGllbnRBcHBcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUFBIiwiZmlsZSI6IkNsaWVudEFwcC9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cbiJdfQ== */", '', '']]
+module.exports = [[module.i, "/* You can add global styles to this file, and also import other style files */\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudEFwcC9DOlxcVXNlcnNcXE5lbGl5YVxcc291cmNlXFxQcm9qZWN0Rmlyc3RcXFNob3BwaW5nQXBwXFxTaG9wcGluZ0FwcC9DbGllbnRBcHBcXHN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDhFQUFBIiwiZmlsZSI6IkNsaWVudEFwcC9zdHlsZXMuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFlvdSBjYW4gYWRkIGdsb2JhbCBzdHlsZXMgdG8gdGhpcyBmaWxlLCBhbmQgYWxzbyBpbXBvcnQgb3RoZXIgc3R5bGUgZmlsZXMgKi9cclxuIl19 */", '', '']]
 
 /***/ }),
 
@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\ClientApp\styles.scss */"./styles.scss");
+module.exports = __webpack_require__(/*! C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\ClientApp\styles.scss */"./styles.scss");
 
 
 /***/ })

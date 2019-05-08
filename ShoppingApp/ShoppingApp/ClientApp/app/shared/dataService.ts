@@ -5,14 +5,12 @@ import { Product } from "./product";
 import { Order, OrderItem } from "./order";
 import { map, filter, switchMap } from 'rxjs/operators';
 
-
 @Injectable()
 export class DataService {
     constructor(private http: HttpClient) { }
 
     private token: string = "";
     private tokenExpiration: Date;
-
     public products: Product[] = [];
     public orders: Order[] = [];
     public order: Order = new Order();
@@ -28,6 +26,7 @@ export class DataService {
     }
 
     loadOrders = async (): Promise<boolean> => {
+        debugger;
         var headers = new HttpHeaders();
         headers.set('Authorization', 'Bearer ' + localStorage.getItem("TOKEN"));
         var response = await this.http.get("/api/orders").toPromise();
@@ -51,14 +50,12 @@ export class DataService {
     }   
 
     public get loginRequired(): boolean {
-        debugger;
         return this.token.length == 0 || this.tokenExpiration > new Date();
     }
 
     login(creds): Observable<boolean> {
         return this.http.post("/account/createtoken", creds)
             .pipe(map((data: any) => {
-                debugger;
                 localStorage.setItem("TOKEN",data.token);
                 this.token = data.token;
                 this.tokenExpiration = data.expiration;
@@ -100,10 +97,10 @@ export class DataService {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString() + this.order.orderDate.getTime();
         }
-        return this.http.post("api/orders", this.order, {
+        return this.http.post("/api/orders", this.order, {
             headers: new HttpHeaders().set("Authorization", "Bearer" + this.token)
         })
-            .pipe(map(resposne => {
+            .pipe(map(response => {
                 this.order = new Order();
                 return true;
             }));

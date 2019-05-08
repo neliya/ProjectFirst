@@ -94,7 +94,7 @@ namespace ShoppingApp
             //    {
             //        var ser = scope.ServiceProvider.GetService<IShoppingAppRepository>();
 
-                    
+
 
             //        var cart = await ser.AddCart(Guid.Parse("30ffbea1-e9c9-4574-a0e4-f0016d86dfda"));
 
@@ -118,13 +118,11 @@ namespace ShoppingApp
             //    //Seed the database
             //    using (var scope = app.ApplicationServices.CreateScope())
             //    {
-            //       var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
+            //        var seeder = scope.ServiceProvider.GetService<ShoppingAppSeeder>();
 
-            //        seeder.TestCart().Wait();
+            //        //seeder.TestCart().Wait();
             //        seeder.SeedAsync().Wait();
             //        seeder.AddRolesAsync().Wait();
-
-
             //    }
             //}
 

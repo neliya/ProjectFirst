@@ -76,3 +76,8 @@ C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\ProductsAdmin\Edit.g.cshtml.cs
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\ProductsAdmin\Index.g.cshtml.cs
 C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\ShoppingApp.csprojAssemblyReference.cache
+C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\OrdersAdmin\Create.g.cshtml.cs
+C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\OrdersAdmin\Delete.g.cshtml.cs
+C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\OrdersAdmin\Details.g.cshtml.cs
+C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\OrdersAdmin\Edit.g.cshtml.cs
+C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\obj\Debug\netcoreapp2.1\Razor\Views\OrdersAdmin\Index.g.cshtml.cs

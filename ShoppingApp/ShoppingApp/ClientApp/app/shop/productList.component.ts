@@ -25,7 +25,7 @@ export class ProductList implements OnInit{
   
         await this.dataService.loadOrders();
         this.products = this.dataService.products;
-        this.orders = this.dataService.orders;
+        //this.orders = this.dataService.orders;
     }
 
     addProduct(product: Product) {

@@ -9,12 +9,13 @@ var Cart = /** @class */ (function () {
     }
     Cart.prototype.onCheckout = function () {
         debugger;
-        this.router.navigate(["checkout"]);
-        //if (this.data.loginRequired) {
-        //    this.router.navigate(["login"]);
-        //} else {
-        //    this.router.navigate(["checkout"]);
-        //}
+        //this.router.navigate(["checkout"]);
+        if (this.data.loginRequired) {
+            this.router.navigate(["login"]);
+        }
+        else {
+            this.router.navigate(["checkout"]);
+        }
     };
     Cart = tslib_1.__decorate([
         Component({

@@ -1,6 +1,7 @@
-﻿<div class="row" style="    margin-left: 414px;">
-    <div class="col-md-8 ">
+﻿<div class="row" style="margin-left: 414px;">
+    <div class="col-md-8 offset-4">
         <div *ngIf="errorMessage" class="alert alert-warning">{{errorMessage}}</div>
+        <h4>Login Page</h4><br />
         <form (submit)="onLogin()" #theForm="ngForm" novalidate>
             <div class="form-group">
                 <label for="username">Username </label>
@@ -14,8 +15,8 @@
 
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-success" value="Login" [disabled]="theForm.invalid"/>
-                <a routerLink="/" class="btn btn-default">Cancel</a>
+                <span style="white-space: nowrap;"><input type="submit" class="btn btn-primary" value="Login" [disabled]="theForm.invalid" /></span>
+                <span style="white-space: nowrap;"><a routerLink="/" class="btn btn-primary">Cancel</a></span>
             </div>
         </form>
     </div>

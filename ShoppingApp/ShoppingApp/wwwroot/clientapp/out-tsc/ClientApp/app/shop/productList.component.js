@@ -18,7 +18,6 @@ var ProductList = /** @class */ (function () {
                     case 2:
                         _a.sent();
                         this.products = this.dataService.products;
-                        this.orders = this.dataService.orders;
                         return [2 /*return*/];
                 }
             });

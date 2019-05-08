@@ -196,7 +196,7 @@ module.exports = ".checkout-thumb{\r\n    max-width: 100px;\r\n}\r\n\r\ntable {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n<!-- Title -->\r\n<div class=\"title\">\r\n    Checkout\r\n</div>\r\n<div class=\"row\" style=\"float: none !important;margin-top: 60px;\">\r\n    <div class=\"col-md-4 offset-md-4 detail-card item\"  style=\"height: auto;\" *ngFor=\"let o of data.order.items\">\r\n        <div class=\"buttons\">\r\n            <span class=\"delete-btn\" (click)=\"delete(o)\"></span>\r\n        </div>\r\n\r\n        <div class=\"image\">\r\n            <img src=\"/img/{{o.productId}}.jpg\" alt=\"\" style=\"width: 181px;height: 147px;\" />\r\n        </div>\r\n\r\n        <div class=\"description\">\r\n            <span>{{o.productCategory}} {{o.productSize}}</span>\r\n            <span>{{o.quantity}}</span>\r\n            <span>{{o.unitPrice | currency: 'USD':true }}</span>\r\n            <span>{{o.unitPrice * o.quantity | currency: 'USD':true}}</span>\r\n        </div>\r\n\r\n        <div class=\"quantity\">\r\n            <button class=\"plus-btn\" type=\"button\" name=\"button\" (click)=\"plusButton(o)\">\r\n                <img src=\"../plus.svg\" alt=\"\" />\r\n            </button>\r\n            <input type=\"text\" [(ngModel)]=\"o.quantity\">\r\n            <button class=\"minus-btn\" type=\"button\" name=\"button\" (click)=\"minusButton()\">\r\n                <img src=\"../minus.svg\" alt=\"\" />\r\n            </button>\r\n        </div>\r\n\r\n        <div class=\"total-price\">{{ data.order.subTotal | currency: 'USD' : true}}</div>\r\n    </div>\r\n</div>\r\n<button id=\"paypal-checkout-btn\" style=\"margin-right: 606px; float: right;\"></button>\r\n\r\n\r\n"
+module.exports = "\r\n<div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n<!-- Title -->\r\n<div class=\"title\">\r\n    Checkout\r\n</div>\r\n<div class=\"row\" style=\"float: none !important;margin-top: 60px;\">\r\n    <div class=\"col-md-6 offset-2 detail-card item\"  style=\"height: auto;\" *ngFor=\"let o of data.order.items\">\r\n        <div class=\"buttons\">\r\n            <span class=\"delete-btn\" (click)=\"delete(o)\"></span>\r\n        </div>\r\n\r\n        <div class=\"image\">\r\n            <img src=\"/img/{{o.productId}}.jpg\" alt=\"\" style=\"width: 181px;height: 147px;\" />\r\n        </div>\r\n\r\n        <div class=\"description\">\r\n            <span>{{o.productCategory}} {{o.productSize}}</span>\r\n            <span>{{o.quantity}}</span>\r\n            <span>{{o.unitPrice | currency: 'USD':true }}</span>\r\n            <span>{{o.unitPrice * o.quantity | currency: 'USD':true}}</span>\r\n        </div>\r\n\r\n        <div class=\"quantity\">\r\n            <button class=\"plus-btn\" type=\"button\" name=\"button\" (click)=\"plusButton(o)\">\r\n                <img src=\"../plus.svg\" alt=\"\" />\r\n            </button>\r\n            <input type=\"text\" [(ngModel)]=\"o.quantity\">\r\n            <button class=\"minus-btn\" type=\"button\" name=\"button\" (click)=\"minusButton()\">\r\n                <img src=\"../minus.svg\" alt=\"\" />\r\n            </button>\r\n        </div>\r\n\r\n        <div class=\"total-price\">{{ data.order.subTotal | currency: 'USD' : true}}</div>\r\n    </div>\r\n</div>\r\n<button id=\"paypal-checkout-btn\" style=\"margin-right: 606px; float: right;\"></button>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -240,13 +240,14 @@ var Checkout = /** @class */ (function () {
                 return actions.payment.create({
                     payment: {
                         transactions: [
-                            { amount: { total: _this.finalAmount, currency: 'USD' } }
+                            { amount: { total: _this.data.order.subtotal, currency: 'USD' } }
                         ]
                     }
                 });
             },
             onAuthorize: function (data, actions) {
                 return actions.payment.execute().then(function (payment) {
+                    _this.router.navigate([""]);
                 });
             }
         };
@@ -309,7 +310,7 @@ var Checkout = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\" style=\"    margin-left: 414px;\">\r\n    <div class=\"col-md-8 \">\r\n        <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n        <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label for=\"username\">Username </label>\r\n                <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required/>\r\n                <div class=\"text-danger\" *ngIf=\"username.touched && username.invalid && username.errors.required\" >Username is required</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password </label>\r\n                <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" #password=\"ngModel\" required />\r\n                <div class=\"text-danger\" *ngIf=\"password.touched && password.invalid && password.errors.required\">Password is required</div>\r\n\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <input type=\"submit\" class=\"btn btn-success\" value=\"Login\" [disabled]=\"theForm.invalid\"/>\r\n                <a routerLink=\"/\" class=\"btn btn-default\">Cancel</a>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row\" style=\"margin-left: 414px;\">\r\n    <div class=\"col-md-8 offset-4\">\r\n        <div *ngIf=\"errorMessage\" class=\"alert alert-warning\">{{errorMessage}}</div>\r\n        <h4>Login Page</h4><br />\r\n        <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n            <div class=\"form-group\">\r\n                <label for=\"username\">Username </label>\r\n                <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required/>\r\n                <div class=\"text-danger\" *ngIf=\"username.touched && username.invalid && username.errors.required\" >Username is required</div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"password\">Password </label>\r\n                <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" #password=\"ngModel\" required />\r\n                <div class=\"text-danger\" *ngIf=\"password.touched && password.invalid && password.errors.required\">Password is required</div>\r\n\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <span style=\"white-space: nowrap;\"><input type=\"submit\" class=\"btn btn-primary\" value=\"Login\" [disabled]=\"theForm.invalid\" /></span>\r\n                <span style=\"white-space: nowrap;\"><a routerLink=\"/\" class=\"btn btn-primary\">Cancel</a></span>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -427,6 +428,7 @@ var DataService = /** @class */ (function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
+                        debugger;
                         headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
                         headers.set('Authorization', 'Bearer ' + localStorage.getItem("TOKEN"));
                         return [4 /*yield*/, this.http.get("/api/orders").toPromise()];
@@ -459,7 +461,6 @@ var DataService = /** @class */ (function () {
     }
     Object.defineProperty(DataService.prototype, "loginRequired", {
         get: function () {
-            debugger;
             return this.token.length == 0 || this.tokenExpiration > new Date();
         },
         enumerable: true,
@@ -469,7 +470,6 @@ var DataService = /** @class */ (function () {
         var _this = this;
         return this.http.post("/account/createtoken", creds)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (data) {
-            debugger;
             localStorage.setItem("TOKEN", data.token);
             _this.token = data.token;
             _this.tokenExpiration = data.expiration;
@@ -505,10 +505,10 @@ var DataService = /** @class */ (function () {
         if (!this.order.orderNumber) {
             this.order.orderNumber = this.order.orderDate.getFullYear().toString() + this.order.orderDate.getTime();
         }
-        return this.http.post("api/orders", this.order, {
+        return this.http.post("/api/orders", this.order, {
             headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set("Authorization", "Bearer" + this.token)
         })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (resposne) {
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (response) {
             _this.order = new _order__WEBPACK_IMPORTED_MODULE_3__["Order"]();
             return true;
         }));
@@ -600,12 +600,13 @@ var Cart = /** @class */ (function () {
     }
     Cart.prototype.onCheckout = function () {
         debugger;
-        this.router.navigate(["checkout"]);
-        //if (this.data.loginRequired) {
-        //    this.router.navigate(["login"]);
-        //} else {
-        //    this.router.navigate(["checkout"]);
-        //}
+        //this.router.navigate(["checkout"]);
+        if (this.data.loginRequired) {
+            this.router.navigate(["login"]);
+        }
+        else {
+            this.router.navigate(["checkout"]);
+        }
     };
     Cart = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -639,7 +640,7 @@ module.exports = ".product-info img{\r\n    float:left;\r\n    margin: 0 2px;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"card_one col-md-3 \" *ngFor=\"let p of products\" style=\"padding: 0px;margin: 9px;margin-bottom:50px;\">\r\n        <img src=\"/img/{{p.id}}.jpg\" alt=\"Denim Jeans\" style=\"width:100%; height: 294px;\">\r\n        <h6> {{p.title}}</h6>\r\n        <p class=\"price\"> {{p.price | currency:\"USD\":true}}</p>\r\n        <p>{{p.description}}</p>\r\n        <p> <button id=\"buyButton\" class=\"btn btn-primary\" (click)=\"addProduct(p)\">Buy</button></p>\r\n    </div>\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"row\">\r\n    <div class=\"card_one col-md-3 \" *ngFor=\"let p of products\" style=\"padding: 0px;margin: 9px;margin-bottom:50px;\">\r\n        <img src=\"/img/{{p.id}}.jpg\" alt=\"Denim Jeans\" style=\"width:100%; height: 294px;\">\r\n        <h4> {{p.title}}</h4>\r\n        <p class=\"price\"> {{p.price | currency:\"USD\":true}}</p>\r\n        <p>{{p.description}}</p>\r\n        <p> <button id=\"buyButton\" class=\"btn btn-primary\" (click)=\"addProduct(p)\" style=\"float: right;\">Buy</button></p>\r\n    </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -676,7 +677,6 @@ var ProductList = /** @class */ (function () {
                     case 2:
                         _a.sent();
                         this.products = this.dataService.products;
-                        this.orders = this.dataService.orders;
                         return [2 /*return*/];
                 }
             });
@@ -802,7 +802,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\neliya.gurung\source\repos\ShoppingApp\ShoppingApp\ClientApp\main.ts */"./main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Neliya\source\ProjectFirst\ShoppingApp\ShoppingApp\ClientApp\main.ts */"./main.ts");
 
 
 /***/ })

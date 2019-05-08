@@ -35,14 +35,14 @@ export class Checkout implements AfterViewChecked {
             return actions.payment.create({
                 payment: {
                     transactions: [
-                        { amount: { total: this.finalAmount, currency: 'USD' } }
+                        { amount: { total: this.data.order.subtotal, currency: 'USD' } }
                     ]
                 }
             })
         },
         onAuthorize: (data, actions) => {
             return actions.payment.execute().then((payment) => {
-
+                this.router.navigate([""]);
             });
         }
     }

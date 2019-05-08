@@ -17,7 +17,7 @@ namespace ShoppingApp
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
-          // SeedDb(host);
+            //SeedDb(host);
             host.Run();
         }
 

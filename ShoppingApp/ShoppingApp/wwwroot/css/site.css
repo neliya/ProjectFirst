@@ -259,7 +259,7 @@ a.button {
 .productTable {
     margin-left: 200px;
     margin-right: 200px;
-    width: 1500px;
+    width: 1051px;
     margin-top: 89px;
 }
 
@@ -283,6 +283,12 @@ a.button {
     width: 20%;
     font-weight: bold;
 }
+
+.orderHeader {
+    width: 68%;
+    font-weight: bold;
+}
+   
 
 .detailvalue {
     width: 80%;

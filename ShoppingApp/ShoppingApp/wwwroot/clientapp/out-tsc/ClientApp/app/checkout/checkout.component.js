@@ -24,13 +24,14 @@ var Checkout = /** @class */ (function () {
                 return actions.payment.create({
                     payment: {
                         transactions: [
-                            { amount: { total: _this.finalAmount, currency: 'USD' } }
+                            { amount: { total: _this.data.order.subtotal, currency: 'USD' } }
                         ]
                     }
                 });
             },
             onAuthorize: function (data, actions) {
                 return actions.payment.execute().then(function (payment) {
+                    _this.router.navigate([""]);
                 });
             }
         };

@@ -94,16 +94,13 @@ namespace ShoppingApp.Data
 
             });
 
-            //await _context.UserRoles.AddAsync(new IdentityUserRole<string>() {
-            //      RoleId = "57a8c4fa-d2d5-47d2-93c0-2cff53f44907",
-            //      UserId = "f84cd9ae-0d8a-480c-ae00-3d5eaf01f4d0"
+            //await _context.UserRoles.AddAsync(new IdentityUserRole<string>()
+            //{
+            //    RoleId = "57a8c4fa-d2d5-47d2-93c0-2cff53f44907",
+            //    UserId = "f84cd9ae-0d8a-480c-ae00-3d5eaf01f4d0"
             //});
-           await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
-        internal async Task TestCart()
-        {
-          
-        }
     }
 }

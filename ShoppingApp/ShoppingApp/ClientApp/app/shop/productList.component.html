@@ -1,10 +1,10 @@
 ﻿<div class="row">
     <div class="card_one col-md-3 " *ngFor="let p of products" style="padding: 0px;margin: 9px;margin-bottom:50px;">
         <img src="/img/{{p.id}}.jpg" alt="Denim Jeans" style="width:100%; height: 294px;">
-        <h6> {{p.title}}</h6>
+        <h4> {{p.title}}</h4>
         <p class="price"> {{p.price | currency:"USD":true}}</p>
         <p>{{p.description}}</p>
-        <p> <button id="buyButton" class="btn btn-primary" (click)="addProduct(p)">Buy</button></p>
+        <p> <button id="buyButton" class="btn btn-primary" (click)="addProduct(p)" style="float: right;">Buy</button></p>
     </div>
 </div>
 

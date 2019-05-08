@@ -1,0 +1,25 @@
+﻿@model ShoppingApp.Data.Entities.Order
+
+@{
+    ViewData["Title"] = "Delete Orders";
+}
+
+<div class="row" style="float: none !important;margin-top: 60px;">
+    <div class="col-md-4 offset-md-4 detail-card">
+        <div style="display:flex; align-items:center;">
+            <h5 class="orderHeader">Order Date</h5>
+            <span class="detailvalue">@Model.OrderDate</span>
+        </div>
+        <div style="display:flex; align-items:center;">
+            <h5 class="orderHeader">Order Number</h5>
+            <span class="detailvalue">@Model.OrderNumber</span>
+        </div>
+        <div>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" style="color: white;" />
+                <input type="submit" value="Delete" class="btn btn-primary" /> |
+                <a asp-action="Index" style="color: white;" class="btn btn-primary">Back to List</a>
+            </form>
+        </div>
+    </div>
+</div>

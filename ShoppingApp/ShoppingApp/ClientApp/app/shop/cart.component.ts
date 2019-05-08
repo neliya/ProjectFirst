@@ -14,12 +14,12 @@ export class Cart {
 
     onCheckout() {
         debugger;
-        this.router.navigate(["checkout"]);
-        //if (this.data.loginRequired) {
-        //    this.router.navigate(["login"]);
-        //} else {
-        //    this.router.navigate(["checkout"]);
-        //}
+        //this.router.navigate(["checkout"]);
+        if (this.data.loginRequired) {
+            this.router.navigate(["login"]);
+        } else {
+            this.router.navigate(["checkout"]);
+        }
     }
 
 
